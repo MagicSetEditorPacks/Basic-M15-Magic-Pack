@@ -241,14 +241,19 @@ set field:
 	name: use flavor bar
 	description: Enables the flavor bar on Mainframe templates.
 set field:
+	type: text
+	name: last main partition
+	description: Card Number Partitions after this one aren't counted as the main part of the set, ex "301" rather than "301/300" or "301/900". Default is M.
+set field:
 	type: choice
 	name: default stamp
 	choice: standard
 	choice: none
 	choice: acorn
 	choice: universes beyond
+	choice: alchemy
+	choice: alchemy old
 	choice: custom
-	choice: custom color
 	description: The default stamp setup to use. Only works on new cards, not supported on all frames.
 set field:
 	type: text
@@ -342,6 +347,12 @@ default set style:
 			fill color 2:   rgb(58,7,80)
 			border color 1: rgb(255,  255,  255)
 			border color 2: rgb(255,  255,  255)
+		variation:
+			name: invertedcommon
+			border radius: 0.10
+			fill type: solid
+			fill color:   rgb(255,255,255)
+			border color: rgb(0,0,0)
 ##purple
 ##fill color 1:   rgb(224,170,247)
 ##fill color 2:   rgb(58,7,80)

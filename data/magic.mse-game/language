@@ -118,6 +118,11 @@ languages := [
 
 # The selected language
 language := { languages[set.card_language] or else languages.English }
+lang_name := { 
+	if languages[set.card_language].code or else false != false then
+		set.card_language
+	else "English"
+}
 spanish_number := {
 	input := remove_tags(input)
 	espanol_ones_array := ["cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez", "once", "doce", "trece", "catorce", "quince"]

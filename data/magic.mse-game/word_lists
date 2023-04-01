@@ -64,7 +64,6 @@ word list:
 			word: Ape
 			word: Archon
 			word: Assembly-Worker
-			word: Astartes
 			word: Atog
 			word: Aurochs
 			word: Avatar
@@ -136,7 +135,6 @@ word list:
 			word: Gargoyle
 			word: Germ
 			word: Giant
-			word: Gith
 			word: Gnoll
 			word: Gnome
 			word: Goat
@@ -243,7 +241,6 @@ word list:
 		word:
 			name: R
 			word: Rabbit
-			word: Raccoon
 			word: Rat
 			word: Reflection
 			word: Rhino
@@ -311,7 +308,6 @@ word list:
 		word:
 			name: W
 			word: Wall
-			word: Walrus
 			word: Weird
 			word: Werewolf
 			word: Whale
@@ -460,7 +456,6 @@ word list:
 		script: all_sub_types(match: "Enchantment")
 		line below: true
 	word: Aura
-	word: Background
 	word: Curse
 	word: Shrine
 	word: Cartouche
@@ -497,7 +492,6 @@ word list:
 	word: Domri
 	word: Dovin
 	word: Ellywick
-	word: Elminister
 	word: Elspeth
 	word: Estrid
 	word: Freyalise
@@ -507,7 +501,6 @@ word list:
 	word: Huatli
 	word: Jace
 	word: Jaya
-	word: Kaito
 	word: Karn
 	word: Kasmina
 	word: Kaya
@@ -516,7 +509,6 @@ word list:
 	word: Liliana
 	word: Lolth
 	word: Lukka
-	word: Minsc
 	word: Mordenkainen
 	word: Nahiri
 	word: Narset
@@ -532,7 +524,6 @@ word list:
 	word: Serra
 	word: Sorin
 	word: Tamiyo
-	word: Tasha
 	word: Teferi
 	word: Teyo
 	word: Tezzeret
@@ -550,31 +541,10 @@ word list:
 	word: Yanling
 	word: Zariel
 	word:
-		name: Last Seen on Capenna
-		word: Elspeth
-		word: Vivien
-		word: Nixilis
-	word:
-		name: Last Seen on Kamigawa
-		word: Kaito
-		word: Tezzeret
-		word: Tamiyo		
-	word:
-		name: Last Seen on Innistrad
-		word: Arlinn
-		word: Chandra
-		word: Kaya
-		word: Sorin
-		word: Teferi
-		word: Wrenn
-	word:
 		name: Last Seen on Faerun
 		word: Ellywick
-		word: Elminister
 		word: Lolth
-		word: Minsc
 		word: Mordenkainen
-		word: Tasha
 		word: Zariel
 	word:
 		name: Last Seen on Strixhaven
@@ -585,6 +555,7 @@ word list:
 		word: Will
 	word:
 		name: Last Seen on Kaldheim
+		word: Kaya
 		word: Niko
 		word: Tibalt
 		word: Tyvar
@@ -594,13 +565,16 @@ word list:
 		word: Kiora
 		word: Nahiri
 		word: Nissa
+		word: Nixilis
 	word:
 		name: Last Seen on Ikoria
 		word: Narset
+		word: Vivien
 	word:
 		name: Last Seen on Theros
 		word: Ashiok
 		word: Calix
+		word: Elspeth
 		word: Xenagos
 	word:
 		name: Last Seen on Eldraine
@@ -620,8 +594,10 @@ word list:
 		word: Yanling
 	word: 
 		name: Last Seen on Dominaria
+		word: Chandra
 		word: Jaya
 		word: Karn
+		word: Teferi
 	word:
 		name: Last Seen on Ixalan
 		word: Angrath
@@ -634,10 +610,16 @@ word list:
 		name: Last Seen on Kaladesh
 		word: Ajani
 		word: Saheeli
+		word: Tezzeret
 	word:
 		name: Last Seen on Fiore
 		name: Dack
 		name: Daretti
+	word:
+		name: Last Seen on Innistrad
+		word: Arlinn
+		word: Sorin
+		word: Tamiyo
 	word:
 		name: Last Seen on Tarkir
 		word: Sarkhan
@@ -650,11 +632,8 @@ word list:
 		name: Last Seen on ???
 		word: Aminatou
 		word: Estrid
-		word: Grist
-	word:
-		name: Last Seen Pre-Mending
-		word: Dakkon
-		word: Dihada
+		word: Wrenn
+	word: Last Seen Pre-Mending
 		word: Freyalise
 		word: Serra
 		word: Windgrace
