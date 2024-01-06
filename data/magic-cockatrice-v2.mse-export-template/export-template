@@ -234,9 +234,9 @@ script:
 			+ ">"+setcode+"\</set>"
 		+"\n      "+"\<prop>"
 		# Color
-		+"\n        "+"\<color>"
+		+"\n        "+"\<colors>"
 		+ card_color()
-			+"\</color>"
+			+"\</colors>"
 		# Mana Cost
 		+"\n        "+"\<manacost>"+card.casting_cost+"\</manacost>"
 		# Converted Mana Cost
@@ -269,9 +269,9 @@ script:
 		+"\n      "+"\<set>"+setcode+"\</set>"
 		+"\n      "+"\<prop>"
 		# Color
-		+"\n        "+"\<color>"
+		+"\n        "+"\<colors>"
 		+ card_color()
-			+"\</color>"
+			+"\</colors>"
 		# Type
 		+"\n        "+"\<type>"+xml_escape(replace(card.type, match:"—", replace:"-"))+"\</type>"
 		+maintype()
@@ -312,7 +312,7 @@ script:
 			+ ">"+setcode+"\</set>"
 		+"\n      "+"\<prop>"
 		# Color
-		+"\n        "+"\<color>"
+		+"\n        "+"\<colors>"
 			+(if contains(card.shape, match:"flip") then
 			 	(if contains(card.card_color, match:"multicolor") or contains(card.card_color, match:"hybrid") then "M"
 			 	else if contains(card.card_color, match:"white") then "W"
@@ -338,7 +338,7 @@ script:
 				else if contains(card.card_color, match:"green") or contains(card.card_color_2, match:"green") then "G"
 			 	else "")
 			 )
-			+"\</color>"
+			+"\</colors>"
 		# Mana Cost
 		+"\n        "+"\<manacost>"+card.casting_cost
 		 +(if card.casting_cost_2 != "" then " // "+card.casting_cost_2)
@@ -384,9 +384,9 @@ script:
 			+ " splitterPath=\""+"/"+options.append_String_To_Names+strip_card_name(card_name())+"." + file_type() + "\" >"+setcode+"\</set>"
 		+"\n      "+"\<prop>"
 		# Color
-		+"\n        "+"\<color>"
+		+"\n        "+"\<colors>"
 		+ card_color()
-			+"\</color>"
+			+"\</colors>"
 		# Mana Cost
 		+"\n        "+"\<manacost>"+card.casting_cost+"\</manacost>"
 		# Converted Mana Cost
@@ -408,7 +408,7 @@ script:
 		+"\n      "+"\<text>"+xml_escape(card_rules_text()
 		+"\n---\n(Back): "+strip_card_name(card.name_2))+"\</text>"
 		# Name of the related card
-		+"\n      "+"\<related attach=\"attach\">"+xml_escape(strip_card_name(card.name_2))+"\</related>"
+		+"\n      "+"\<related attach=\"transform\">"+xml_escape(strip_card_name(card.name_2))+"\</related>"
 		+ (if filter_token(card.notes) != "" then remove_empty(convert_token(filter_token(card.notes))))
 		+"\n    "+"\</card>"
 		+"\n    "+"\<card>"
@@ -427,9 +427,9 @@ script:
 			+ " splitterPath=\""+"/"+strip_card_name(card.name_2)+"." + file_type() + "\" >"+setcode+"\</set>"
 		+"\n      "+"\<prop>"
 		# Color II
-		+"\n        "+"\<color>"
+		+"\n        "+"\<colors>"
 		+ card_color_2()
-			+"\</color>"
+			+"\</colors>"
 		# Mana Cost II
 		+"\n        "+"\<manacost>"+card.casting_cost_2+"\</manacost>"
 		# Converted Mana Cost II
@@ -449,6 +449,8 @@ script:
 		# Rules Text II
 		+"\n      "+"\<text>"+xml_escape(card_rules_text_2()
 		+"\n---\n(Front): "+strip_card_name(card_name()))+"\</text>"
+		# Name of the related card
+		+"\n      "+"\<related attach=\"transform\">"+xml_escape(strip_card_name(card.name))+"\</related>"
 		+ (if filter_token(card.notes) != "" then remove_empty(convert_token(filter_token(card.notes))))
 		+"\n    "+"\</card>"
 	}
@@ -471,9 +473,9 @@ script:
 			+ ">"+setcode+"\</set>"
 		+"\n      "+"\<prop>"
 		# Color
-		+"\n        "+"\<color>"
+		+"\n        "+"\<colors>"
 		+ card_color()
-			+"\</color>"
+			+"\</colors>"
 		# Mana Cost
 		+"\n        "+"\<manacost>"+card.casting_cost+"\</manacost>"
 		# Converted Mana Cost
@@ -526,9 +528,9 @@ script:
 			+ " splitterPath=\""+"/"+options.append_String_To_Names+strip_card_name(card_name())+"." + file_type() + "\" >"+setcode+"\</set>"
 		+"\n      "+"\<prop>"
 		# Color
-		+"\n        "+"\<color>"
+		+"\n        "+"\<colors>"
 		+ card_color()
-			+"\</color>"
+			+"\</colors>"
 		# Mana Cost
 		+"\n        "+"\<manacost>"+card.casting_cost+"\</manacost>"
 		# Converted Mana Cost
@@ -565,7 +567,7 @@ script:
 		+(if contains(paragraph_count(card.rule_text), match:"•••") then "\n"))
 		+"\n---\n(Back): "+strip_card_name(card.name_2))+"\</text>"
 		# Name of the related card
-		+"\n      "+"\<related attach=\"attach\">"+xml_escape(strip_card_name(card.name_2))+"\</related>"
+		+"\n      "+"\<related attach=\"transform\">"+xml_escape(strip_card_name(card.name_2))+"\</related>"
 		+ (if filter_token(card.notes) != "" then remove_empty(convert_token(filter_token(card.notes))))
 		+"\n    "+"\</card>"
 		+"\n    "+"\<card>"
@@ -583,9 +585,9 @@ script:
 			+ " splitterPath=\""+"/"+strip_card_name(card.name_2)+"." + file_type() + "\" >"+setcode+"\</set>"
 		+"\n      "+"\<prop>"
 		# Color II
-		+"\n        "+"\<color>"
+		+"\n        "+"\<colors>"
 		+ card_color_2()
-			+"\</color>"
+			+"\</colors>"
 		# Mana Cost II
 		+"\n        "+"\<manacost>"+card.casting_cost_2+"\</manacost>"
 		# Converted Mana Cost II
@@ -620,6 +622,8 @@ script:
 			+(if contains(paragraph_count(card.rule_text_2), match:"••") then split_text(match:"\n", card.rule_text_2).2)
 		+(if contains(paragraph_count(card.rule_text_2), match:"•••") then "\n"))
 		+"\n---\n(Front): "+strip_card_name(card_name()))+"\</text>"
+		# Name of the related card
+		+"\n      "+"\<related attach=\"transform\">"+xml_escape(strip_card_name(card.name))+"\</related>"
 		+ (if filter_token(card.notes) != "" then remove_empty(convert_token(filter_token(card.notes))))
 		+"\n    "+"\</card>"
 	}
@@ -639,9 +643,9 @@ script:
 			+ " splitterPath=\""+"/"+options.append_String_To_Names+strip_card_name(card_name())+"." + file_type() + "\" >"+setcode+"\</set>"
 		+"\n      "+"\<prop>"
 		# Color
-		+"\n        "+"\<color>"
+		+"\n        "+"\<colors>"
 		+ card_color()
-			+"\</color>"
+			+"\</colors>"
 		# Mana Cost
 		+"\n        "+"\<manacost>"+card.casting_cost+"\</manacost>"
 		# Converted Mana Cost
@@ -663,7 +667,7 @@ script:
 		+"\n      "+"\<text>"+xml_escape(card_rules_text()
 		+"\n---\n(Back): "+strip_card_name(card.name_2))+"\</text>"
 		# Name of the related card
-		+"\n      "+"\<related attach=\"attach\">"+xml_escape(strip_card_name(card.name_2))+"\</related>"
+		+"\n      "+"\<related attach=\"transform\">"+xml_escape(strip_card_name(card.name_2))+"\</related>"
 		+ (if filter_token(card.notes) != "" then remove_empty(convert_token(filter_token(card.notes))))
 		+"\n    "+"\</card>"
 		+"\n    "+"\<card>"
@@ -681,9 +685,9 @@ script:
 			+ " splitterPath=\""+"/"+strip_card_name(card.name_2)+"." + file_type() + "\" >"+setcode+"\</set>"
 		+"\n      "+"\<prop>"
 		# Color II
-		+"\n        "+"\<color>"
+		+"\n        "+"\<colors>"
 		+ card_color_2()
-			+"\</color>"
+			+"\</colors>"
 		# Mana Cost II
 		+"\n        "+"\<manacost>"+card.casting_cost_2+"\</manacost>"
 		# Converted Mana Cost II
@@ -718,6 +722,8 @@ script:
 			+(if contains(paragraph_count(card.rule_text_2), match:"••") then split_text(match:"\n", card.rule_text_2).2)
 		+(if contains(paragraph_count(card.rule_text_2), match:"•••") then "\n"))
 		+"\n---\n(Front): "+strip_card_name(card_name()))+"\</text>"
+		# Name of the related card
+		+"\n      "+"\<related attach=\"transform\">"+xml_escape(strip_card_name(card.name))+"\</related>"
 		+ (if filter_token(card.notes) != "" then remove_empty(convert_token(filter_token(card.notes))))
 		+"\n    "+"\</card>"
 	}
@@ -737,9 +743,9 @@ script:
 			+ " splitterPath=\""+"/"+options.append_String_To_Names+strip_card_name(card_name())+"." + file_type() + "\" >"+setcode+"\</set>"
 		+"\n      "+"\<prop>"
 		# Color
-		+"\n        "+"\<color>"
+		+"\n        "+"\<colors>"
 		+ card_color()
-			+"\</color>"
+			+"\</colors>"
 		# Mana Cost
 		+"\n        "+"\<manacost>"+card.casting_cost+"\</manacost>"
 		# Converted Mana Cost
@@ -776,7 +782,7 @@ script:
 		+(if contains(paragraph_count(card.rule_text), match:"•••") then "\n"))
 		+"\n---\n(Back): "+strip_card_name(card.name_2))+"\</text>"
 		# Name of the related card
-		+"\n      "+"\<related attach=\"attach\">"+xml_escape(strip_card_name(card.name_2))+"\</related>"
+		+"\n      "+"\<related attach=\"transform\">"+xml_escape(strip_card_name(card.name_2))+"\</related>"
 		+ (if filter_token(card.notes) != "" then remove_empty(convert_token(filter_token(card.notes))))
 		+"\n    "+"\</card>"
 		+"\n    "+"\<card>"
@@ -795,9 +801,9 @@ script:
 			+ " splitterPath=\""+"/"+strip_card_name(card.name_2)+"." + file_type() + "\" >"+setcode+"\</set>"
 		+"\n      "+"\<prop>"
 		# Color II
-		+"\n        "+"\<color>"
+		+"\n        "+"\<colors>"
 		+ card_color_2()
-			+"\</color>"
+			+"\</colors>"
 		# Mana Cost II
 		+"\n        "+"\<manacost>"+card.casting_cost_2+"\</manacost>"
 		# Converted Mana Cost II
@@ -817,6 +823,8 @@ script:
 		# Rules Text II
 		+"\n      "+"\<text>"+xml_escape(card_rules_text_2()
 		+"\n---\n(Front): "+strip_card_name(card_name()))+"\</text>"
+		# Name of the related card
+		+"\n      "+"\<related attach=\"transform\">"+xml_escape(strip_card_name(card.name))+"\</related>"
 		+ (if filter_token(card.notes) != "" then remove_empty(convert_token(filter_token(card.notes))))
 		+"\n    "+"\</card>"
 	}
@@ -834,9 +842,9 @@ script:
 			+ ">"+setcode+"\</set>"
 		+"\n      "+"\<prop>"
 		# Color
-		+"\n        "+"\<color>"
+		+"\n        "+"\<colors>"
 		+ card_color()
-			+"\</color>"
+			+"\</colors>"
 		# Mana Cost
 		+"\n        "+"\<manacost>"+card.casting_cost+"\</manacost>"
 		# Converted Mana Cost
