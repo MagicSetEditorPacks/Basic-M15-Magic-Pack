@@ -1,0 +1,75 @@
+﻿mse version: 2.0.0
+game: magic
+short name: Full Art
+full name: Secret Lair
+icon: card-sample.png
+installer group: magic/m15 style/normal cards
+position hint: 099
+
+version: 2024-05-26
+depends on:
+	package: magic.mse-game
+	version: 2014-06-25
+depends on:
+	package: magic-modules.mse-include
+	version: 2024-10-01
+
+card width: 375
+card height: 523
+card dpi: 150
+############################################################## Set info fields
+styling field:
+	type: boolean
+	name: remove from autocount
+	description: Removes the automatic card number for specific cards, to allow for overcounted cards like in Planeswalker Decks.
+	initial: no
+styling field:
+	type: boolean
+	name: promo
+	description: Is this card a promo card, with the "P" rarity?
+	initial: no
+
+############################################################## Card fields
+include file: /magic-modules.mse-include/information/card_fields
+include file: /magic-modules.mse-include/stamps/card_fields
+include file: /magic-modules.mse-include/corners/card_fields
+card style:
+	############################# Image
+	image:
+		left: 0
+		top: 0
+		width: 375
+		height:	486
+		z index: 100
+############################################################## Extra card fields
+extra card field:
+	type: choice
+	name: border
+	editable: false
+	save value: false
+	choice: border
+extra card field:
+	type: choice
+	name: stamp backing
+	choice: backing
+	editable: false
+	save value: false
+
+extra card style:
+	border:
+		left: 0
+		top: 0
+		width: 375
+		height: 523
+		z index: 0
+		render style: image
+		image: card.png
+	stamp backing:
+		left: 165
+		top: 472
+		width: 46
+		height: 26
+		z index: 850
+		visible: { card.card_stamp != "none" }
+		render style: image
+		image: { "/magic-modules.mse-include/stamps/backs/" + (if stamp_shape(field:1) == "triangle" then "triangle_stamp.png" else "stamp.png") }
