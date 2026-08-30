@@ -1,0 +1,34 @@
+# The watermark choices
+choice:
+	name: mana symbol
+	choice: yellow
+	choice: purple
+	choice: orange
+	choice: pink
+include file: /magic-modules.mse-include/watermarks/choices
+choice:
+	name: rarity symbols
+	choice: common
+	choice: uncommon
+	choice: rare
+	choice: mythic rare
+	choice: special
+choice:
+	name: lovecraft symbols
+	choice: hastur
+	choice: cthulhu
+	choice: father dagon
+	choice: shub-Niggurath:
+	choice: yog-Sothoth
+	choice: nyarlathotep
+	choice: elder sign
+choice:
+	name: ulxiz symbols
+	choice: 1
+	choice: 2
+	choice: 3
+	choice: 4
+	choice: 5
+	choice: 6
+	choice: 7
+choice: jrzman symbols mellis brand

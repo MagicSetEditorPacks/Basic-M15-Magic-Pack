@@ -1,0 +1,14 @@
+﻿mse version:		2.6.0
+short name:			Color Indicators
+position hint:		02
+installer group:	magic/Game Files/Color Indicators
+version:			2026-08-28
+depends on:
+	package:			magic.mse-game
+	version:			2026-08-28
+
+
+#### This file doesn't do anything.
+#### Other files in this directory can be included in game/style files.
+#### This include covers the color indicator dot.
+#### This include is being phased out in favor of magic-modules.mse-include/indicators
